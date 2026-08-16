@@ -1,0 +1,14 @@
+gaussian-splatting
+3dgs
+apple-silicon
+metal
+mlx
+colmap
+streamlit
+supersplat
+photogrammetry
+computer-vision
+3d-reconstruction
+macos
+depth-estimation
+ai
