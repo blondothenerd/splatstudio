@@ -1,1 +1,0 @@
-Local macOS workstation for creating, reviewing and editing 3D Gaussian Splats from videos or photo sets using COLMAP, MLX, native Metal acceleration, AI-assisted preprocessing and SuperSplat.
