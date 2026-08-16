@@ -1,0 +1,11 @@
+streamlit==1.61.0
+psutil>=6,<8
+mlx==0.30.0
+nanobind==2.4.0
+cmake>=4,<5
+opencv-python>=4.10,<6
+plyfile>=1.1,<2
+pillow>=11,<13
+scipy>=1.15,<2
+pycolmap>=3.13,<5
+tyro>=0.9,<2
