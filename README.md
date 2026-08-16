@@ -47,8 +47,7 @@ Splat Studio currently targets:
 - Apple Metal toolchain
 - Homebrew
 
-The packaged installer currently targets Apple Silicon Macs. Windows, Linux and
-Intel Macs are not currently supported.
+The packaged installer currently targets Apple Silicon Macs. Intel Macs are not currently supported. Windows & Linux miss out unfortunately.
 
 ## Installation
 
@@ -322,7 +321,7 @@ Splat Studio builds on excellent open-source and research projects including:
 
 - COLMAP
 - MLX
-- `a1091150/gsplat-mlx`
+- `gsplat-mlx`
 - PlayCanvas SuperSplat
 - FFmpeg
 - Streamlit
