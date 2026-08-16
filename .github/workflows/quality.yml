@@ -1,1 +1,33 @@
+name: Quality checks
 
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  portability-and-syntax:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Check Python syntax
+        run: |
+          python -m py_compile SplatStudio.py
+          python -m py_compile scripts/check_portability.py
+          python -m py_compile scripts/doctor.py
+          python -m py_compile scripts/prefetch_ai_models.py
+
+      - name: Check repository portability
+        run: python scripts/check_portability.py
