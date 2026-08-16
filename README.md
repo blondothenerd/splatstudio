@@ -138,19 +138,71 @@ If Homebrew is missing, Splat Studio automatically attempts to install it using
 Homebrew's official installer. If macOS requires a password/confirmation, the
 official installer may ask for it.
 
-### macOS says the `.command` file cannot be opened
+## 🛡️ macOS blocked the installer?
 
-If the command files lost their executable permission after downloading, open
-Terminal in the Splat Studio folder and run:
+On some Macs, the first time you open one of Splat Studio's `.command` files,
+macOS may show a message similar to:
+
+> **“Install Splat Studio.command” was blocked to protect your Mac.**  
+> Apple could not verify that the file is free of malware.
+
+This is expected for a downloaded script that has not been signed/notarised as
+a commercial Mac application.
+
+### Easiest fix
+
+1. Try to open `Install Splat Studio.command` normally.
+2. When macOS blocks it, open **System Settings**.
+3. Go to **Privacy & Security**.
+4. Scroll down to the **Security** section.
+5. You should see a message saying the Splat Studio `.command` file was blocked.
+6. Click **Open Anyway**.
+7. Enter your Mac password / use Touch ID if macOS asks.
+8. Click **Open** when macOS asks one final time.
+
+The installer should then start in Terminal.
+
+> You normally only need to approve a particular downloaded script once.
+
+### Alternative: right-click → Open
+
+You can also try:
+
+1. Find the `.command` file in Finder.
+2. **Right-click / Control-click** it.
+3. Choose **Open**.
+4. Confirm **Open** again if macOS offers the option.
+
+### If the file says it cannot be executed
+
+ZIP downloads can occasionally lose the executable flag.
+
+Open Terminal, drag the Splat Studio folder into Terminal if needed, then run:
 
 ```bash
+cd /path/to/splatstudio
 chmod +x *.command
 ```
 
-Then double-click the installer again.
+Then double-click:
 
-If Gatekeeper blocks a downloaded command file, right-click it in Finder and
-choose **Open**, then confirm that you want to run it.
+```text
+Install Splat Studio.command
+```
+
+again.
+
+### Important
+
+Only bypass the macOS warning if you intentionally downloaded Splat Studio from
+the official repository:
+
+```text
+https://github.com/blondothenerd/splatstudio
+```
+
+You can inspect every `.command` file in the repository before running it;
+they are plain-text shell scripts.
 
 ### 3. Launch
 
