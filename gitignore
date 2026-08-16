@@ -1,0 +1,52 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments / local runtimes
+.venv/
+venv/
+env/
+runtime/
+
+# Splat Studio local/generated data
+backend/
+models/
+projects/
+.splat_studio/
+
+# Logs / temporary files
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Local environment / secrets
+.env
+.env.*
+!.env.example
+
+# IDE/editor files
+.vscode/
+.idea/
+
+# Build artefacts
+build/
+dist/
+*.egg-info/
+
+# Finder / archive leftovers
+*.zip
