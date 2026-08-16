@@ -233,9 +233,23 @@ It creates:
 Splat Studio.app
 ```
 
-inside the Splat Studio folder using the included icon.
+inside the Splat Studio folder.
 
-You can then drag the generated app into:
+The app creator automatically builds the macOS app icon from:
+
+```text
+SplatStudio_icon.png
+```
+
+and embeds it into the generated app.
+
+You can then drag:
+
+```text
+Splat Studio.app
+```
+
+into:
 
 ```text
 /Applications
@@ -243,22 +257,49 @@ You can then drag the generated app into:
 
 if you want Splat Studio to appear alongside your other Mac applications.
 
+### What the generated app does
+
+When opened, the generated app:
+
+- starts `SplatStudio.py` directly
+- uses Splat Studio's private Python runtime
+- restores Homebrew paths so COLMAP, FFmpeg, Node.js and related tools remain available
+- restores the Xcode developer environment required by the Metal backend
+- waits for the Streamlit server to become genuinely healthy
+- opens the browser only after Splat Studio has successfully started
+- offers to run `Install Splat Studio.command` if the local runtime is missing
+
+If startup fails, the app does **not** simply open a dead localhost page.
+
+Instead, it writes a launch log to:
+
+```text
+.splat_studio/app-launch.log
+```
+
+and offers to open that log for troubleshooting.
+
 ### Important
 
-The generated `.app` is only a **local launcher**. The Python runtime, backend,
-projects and Splat Studio source remain in the Splat Studio folder.
+The generated `.app` is a **local launcher**. The Python runtime, backend,
+projects, models and Splat Studio source remain inside the main Splat Studio
+folder.
 
-The app creator intentionally records the location of **your local**
-Splat Studio installation when it creates the `.app`. No user-specific path is
-stored in the public GitHub repository.
+The app creator records the location of **your local** Splat Studio installation
+inside the app when it is created. This local path is generated on the user's
+Mac and is **not** stored in the public GitHub repository.
 
-If you later move or rename the Splat Studio folder, just run:
+This means you can move `Splat Studio.app` itself into `/Applications`, while
+the main Splat Studio folder can remain somewhere such as your Applications,
+Documents or development folder.
+
+If you later move or rename the main Splat Studio folder, simply run:
 
 ```text
 Create Splat Studio App.command
 ```
 
-again.
+again to regenerate the launcher with the new location.
 
 The generated `.app` is ignored by Git and should not be committed to the
 repository.
