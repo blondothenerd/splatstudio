@@ -25,6 +25,8 @@ backend/
 models/
 projects/
 .splat_studio/
+.install-cache/
+/Splat Studio.app/
 
 # Logs / temporary files
 *.log
