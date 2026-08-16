@@ -81,7 +81,7 @@ Node where required.
 ### 3. Clone Splat Studio
 
 ```bash
-git clone https://github.com/YOUR-GITHUB-USERNAME/SplatStudio.git
+git clone https://github.com/blondothenerd/SplatStudio.git
 cd SplatStudio
 ```
 
