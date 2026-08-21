@@ -10,6 +10,11 @@
 
 <p align="center">Created by <strong>blondothenerd</strong>.</p>
 
+<p align="center">
+  <img src="docs/images/image1.png" alt="Splat Studio interface" width="100%">
+</p>
+
+
 Splat Studio is a local macOS workstation for creating, reviewing and editing
 **3D Gaussian Splats** from videos or still-photo sets.
 
